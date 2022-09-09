@@ -18,6 +18,12 @@ public class Aluno implements Serializable {
 
 	private String nome;
 
+	public Aluno() {}
+	
+	public Aluno(String nome) {
+		this.nome = nome;
+	}
+	
 	public Integer getId() {
 		return Id;
 	}
