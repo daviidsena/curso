@@ -16,7 +16,7 @@ public class CursoController {
 	@Autowired
 	private CursoService cursoService;
 	
-	@GetMapping("/listar")
+	@GetMapping("/")
 	public ModelAndView listaTodosCursos() {
 		ModelAndView mv = new ModelAndView("curso/listar");
 		mv.addObject("cursos", cursoService.obterCursos());
@@ -26,6 +26,6 @@ public class CursoController {
 	@GetMapping("/excluir/{id}")
 	public String excluirCurso(@PathVariable("id") Integer id) {
 		cursoService.deletarPorId(id);
-		return "redirect:/curso/listar";
+		return "redirect:/curso/";
 	}
 }	

@@ -16,7 +16,7 @@ public class TurmaController {
 	@Autowired
 	private TurmaService turmaService;
 	
-	@GetMapping("/listar")
+	@GetMapping("/")
 	public ModelAndView listaTodosTurmas() {
 		ModelAndView mv = new ModelAndView("turma/listar");
 		mv.addObject("turmas", turmaService.obterTurmas());
@@ -26,6 +26,6 @@ public class TurmaController {
 	@GetMapping("/excluir/{id}")
 	public String excluirTurma(@PathVariable("id") Integer id) {
 		turmaService.deletarPorId(id);
-		return "redirect:/turma/listar";
+		return "redirect:/turma/";
 	}
 }	

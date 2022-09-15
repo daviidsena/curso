@@ -16,7 +16,7 @@ public class ProfessorController {
 	@Autowired
 	private ProfessorService professorService;
 	
-	@GetMapping("/listar")
+	@GetMapping("/")
 	public ModelAndView listaTodosProfessors() {
 		ModelAndView mv = new ModelAndView("professor/listar");
 		mv.addObject("professores", professorService.obterProfessores());
@@ -26,6 +26,6 @@ public class ProfessorController {
 	@GetMapping("/excluir/{id}")
 	public String excluirProfessor(@PathVariable("id") Integer id) {
 		professorService.deletarPorId(id);
-		return "redirect:/professor/listar";
+		return "redirect:/professor/";
 	}
 }	
