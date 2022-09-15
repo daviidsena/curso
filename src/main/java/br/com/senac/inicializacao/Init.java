@@ -36,10 +36,10 @@ public class Init implements ApplicationListener<ContextRefreshedEvent>{
 		Faker faker = new Faker();
 		
 		for (int i = 0; i < 10; i++) {
-			alunoService.salvar(new Aluno(faker.name().firstName()));
+			alunoService.salvar(new Aluno(faker.name().fullName()));
 			turmaService.salvar(new Turma(faker.code().asin()));
 			cursoService.salvar(new Curso(faker.name().firstName()));
-			professorService.salvar(new Professor(faker.name().firstName()));
+			professorService.salvar(new Professor(faker.name().fullName()));
 		}
 	}
 }
