@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title th:utext="*{title}"></title>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	</link>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>	
+
+<body>
+	<div class="container">
+		<div class="panel-default">
+			<div class="text-center">
+				<h1 class="h4 text-gray-900 mb-4" th:utext="*{title}"></h1>
+			</div>
+			<div class="panel-body">
+				<div class="container">
+					<form class="form-horizontal" method="post" th:action="@{/turma/cadastrar/}"
+						th:object="${turma}">
+						<div class="form-group">
+							<fieldset>
+								<div class="form-group row">
+									<input th:field="*{id}" th:value="*{id}" type="hidden">
+
+									<label>Nome</label>
+									<input th:field="*{nome}" th:value="*{nome}" type="text"
+										class="form-control input-sm" placeholder="Informe o nome" maxlength="50">
+								</div>
+							</fieldset>
+							<button class="btn btn-sm btn-success" type="submit">Salvar</button>
+							<a th:href="@{/turma/}" class="btn btn-sm btn-light">Cancelar</a>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
