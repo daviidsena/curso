@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	<title>Listagem de Alunos</title>
+	<title th:utext="*{title}"></title>
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 	</link>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -12,7 +12,7 @@
 	<div class="container">
 		<div class="panel-default">
 			<div class="text-center">
-				<h1 class="h4 text-gray-900 mb-4">Listagem de Alunos</h1>
+				<h1 class="h4 text-gray-900 mb-4" th:utext="*{title}"></h1>
 			</div>
 			<div class="panel-body">
 				<div class="container">
@@ -27,7 +27,7 @@
 										maxlength="50">
 								</div>
 							</fieldset>
-							<button class="btn btn-sm btn-success" type="submit">Cadastrar</button>
+							<button class="btn btn-sm btn-success" type="submit">Salvar</button>
 							<a th:href="@{/aluno/}" class="btn btn-sm btn-light" >Cancelar</a>
 						</div>
 					</form>

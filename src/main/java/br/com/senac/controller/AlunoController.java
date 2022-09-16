@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.com.senac.entity.Aluno;
+import br.com.senac.entity.Curso;
 import br.com.senac.service.AlunoService;
 
 @Controller
@@ -35,6 +36,7 @@ public class AlunoController {
 	public ModelAndView cadastrarAluno() {
 		ModelAndView mv = new ModelAndView("aluno/cadastrar");
 		mv.addObject("aluno", new Aluno());
+		mv.addObject("title", "Cadastrar Aluno");
 		return mv;
 	}
 	
@@ -48,6 +50,7 @@ public class AlunoController {
 	public ModelAndView editar(@PathVariable("id") Integer id) {
 		ModelAndView mv = new ModelAndView("aluno/cadastrar");
 		mv.addObject("aluno", alunoService.buscarPorId(id));
+		mv.addObject("title", "Editar Aluno");
 		return mv;
 	}
 }
