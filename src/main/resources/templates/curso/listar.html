@@ -12,6 +12,9 @@
 					<h1 class="h4 text-gray-900 mb-4">Listagem de Cursos</h1>
 				</div>
 				<div class="panel-body">
+					<div>	
+						<a th:href="@{cadastrar/}" class="btn btn-sm btn-success">CADASTRAR NOVO CURSO</a>
+					</div>
 					<div class="table-responsive">
 						<table class="table table-sm table-striped table-hover table-bordered">
 							<thead>
@@ -27,7 +30,7 @@
 									<td th:text="${curso.nome}"></td>
 									<td>
 										<div class="btn-group pull-right">
-											<a class="btn btn-sm btn-primary">Alterar</a>
+											<a th:href="@{editar/{id}(id=${curso.id})}" class="btn btn-sm btn-primary">Alterar</a>
 											<a th:href="@{excluir/{id}(id=${curso.id})}" class="delete btn btn-sm btn-danger">Excluir</a>
 										</div>
 									</td>
@@ -37,7 +40,6 @@
 					</div>
 				</div>
 			</div>
-			<a class="btn btn-sm btn-success">CADASTRAR NOVO DOCUMENTO</a>
 		</div>
 	</body>
 </html>
